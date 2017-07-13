@@ -4,7 +4,7 @@
   "description": "clock",
   "main": "index.js",
   "scripts": {
-    "start" : "webpack-boot start"
+    "start": "webpack-boot start"
   },
   "keywords": [
     "clock",
@@ -13,8 +13,13 @@
   "author": "smulyono@me.com",
   "license": "MIT",
   "devDependencies": {
+    "babel-preset-stage-0": "^6.24.1",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
-    "webpack-boot": "^0.0.8"
+    "webpack-boot": "^0.0.10"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
   }
 }

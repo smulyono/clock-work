@@ -1,0 +1,76 @@
+@diameter : 300px;
+@tickHeight : 5px;
+@clockBorder : 10px;
+@center : (@diameter / 2) - @clockBorder;
+
+.generateClockDegree(@degree) when (@degree >= 0) {
+    .generateClockDegree(@degree - 1);
+    .clockDegree-@{degree} {
+        transform-origin: left;
+        transform: rotate((@degree - 90deg));
+    }
+}
+
+
+* {
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color : black;
+    color : white;
+    font-size: 14px;
+}
+
+.clock-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width : 100vw;
+    height : 100vh;
+    .clock-display {
+        width : @diameter;
+        height: @diameter;
+        border-radius : 50%;
+        border-width: @clockBorder;
+        border-color : whitesmoke;
+        border-style: solid;
+        background-color : transparent;
+        
+        display:flex;
+        align-items : center;
+        position:relative;
+
+        .center {
+            position:absolute;
+            left: (@center);
+            transform-origin: left;
+            transform: rotate(-90deg);
+        }
+
+
+        .clock-hour-tick {
+            width : 0.6 * (@diameter / 2);
+            height : @tickHeight;
+            background-color : cornsilk;
+            z-index:4;
+        }
+        .clock-minute-tick {
+            width : 0.9 * (@diameter / 2);
+            height : @tickHeight;
+            background-color : red;
+            z-index:3;
+        }
+        .clock-second-tick {
+            width : 0.8 * (@diameter / 2);
+            height : @tickHeight - 2;
+            background-color : blue;
+            z-index:2;
+        }
+
+        .generateClockDegree(360);
+        
+    }
+}

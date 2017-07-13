@@ -1,1 +1,9 @@
-document.getElementById("root").innerHTML = "<h1>HELLO WORLD</h1>"
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Clock from './components/clock';
+import './assets/css/clock.less';
+
+ReactDOM.render(
+    <Clock />,
+    document.getElementById("root")
+);
