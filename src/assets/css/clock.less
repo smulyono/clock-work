@@ -1,4 +1,4 @@
-@diameter : 300px;
+@diameter : 200px;
 @tickHeight : 5px;
 @clockBorder : 10px;
 @center : (@diameter / 2) - @clockBorder;
@@ -26,10 +26,17 @@ body {
 
 .clock-container {
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width : 100vw;
     height : 100vh;
+
+    .clock-display-label {
+        font-size : 1.5em;
+        color : azure;
+    }
+    
     .clock-display {
         width : @diameter;
         height: @diameter;
@@ -48,8 +55,8 @@ body {
             left: (@center);
             transform-origin: left;
             transform: rotate(-90deg);
+            transition: 1s ease-out;
         }
-
 
         .clock-hour-tick {
             width : 0.6 * (@diameter / 2);
@@ -58,13 +65,13 @@ body {
             z-index:4;
         }
         .clock-minute-tick {
-            width : 0.9 * (@diameter / 2);
+            width : 0.8 * (@diameter / 2);
             height : @tickHeight;
             background-color : red;
             z-index:3;
         }
         .clock-second-tick {
-            width : 0.8 * (@diameter / 2);
+            width : 0.7 * (@diameter / 2);
             height : @tickHeight - 2;
             background-color : blue;
             z-index:2;
