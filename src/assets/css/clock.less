@@ -1,6 +1,6 @@
-@diameter : 200px;
+@diameter : 50vw;
 @tickHeight : 5px;
-@clockBorder : 10px;
+@clockBorder : 2px;
 @center : (@diameter / 2) - @clockBorder;
 
 .generateClockDegree(@degree) when (@degree >= 0) {
@@ -55,13 +55,14 @@ body {
             left: (@center);
             transform-origin: left;
             transform: rotate(-90deg);
-            transition: 1s ease-out;
+            transition: 0.05s linear;
+            transition-timing-function: cubic-bezier(1, 0, 0, 1)
         }
 
         .clock-hour-tick {
             width : 0.6 * (@diameter / 2);
             height : @tickHeight;
-            background-color : cornsilk;
+            background-color : greenyellow;
             z-index:4;
         }
         .clock-minute-tick {

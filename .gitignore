@@ -1,3 +1,5 @@
 node_modules
 .vscode/chrome
 yarn.lock
+build
+dist

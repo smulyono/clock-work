@@ -4,7 +4,8 @@
   "description": "clock",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-boot start"
+    "start": "webpack-boot start",
+    "build" : "webpack-boot build"
   },
   "keywords": [
     "clock",
